@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=500" />
+	<meta name="keywords" content="ScrollMagic, example, scrolling, attaching, scrollbar, tween, tweenmax" />
+	<meta name="author"	content="Jan Paepke (www.janpaepke.de)" />
+	<title>Image Sequence - Examples - ScrollMagic</title>
+
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic|Josefin+Slab:400,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="assets/css/normalize.css" type="text/css">
+	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
+	<link rel="stylesheet" href="assets/css/examples.css" type="text/css">
+	<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+
+	<script type="text/javascript" src="assets/js/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/lib/highlight.pack.js"></script>
+	<script type="text/javascript" src="assets/js/lib/modernizr.custom.min.js"></script>
+	<script type="text/javascript" src="assets/js/examples.js"></script>
+
+	<script type="text/javascript" src="assets/js/lib/gsap3/gsap.min.js"></script>
+	<script type="text/javascript" src="scrollmagic/uncompressed/ScrollMagic.js"></script>
+	<script type="text/javascript" src="scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+	<script type="text/javascript" src="scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
+</head>
+
+<body>
+
+
+</div>
+<div id="imagesequence">
+
+
+
+	<img id="myimg"/><br>
+
+	<div id="reveal1" class="box2 white">
+		<p>Ah what a long day, I can't wait to get back home.</p>
+	</div>
+
+</div>
+	<div class="truebg" style="display:flex">
+		<img src="assets/img/maplebg.png">
+		<img src="assets/img/maplebg2.png">
+		<img src="assets/img/maplebg4.png">
+	<img src="assets/img/maplebg5.png">
+	<img src="assets/img/maplebg.png">
+
+	</div>
+
+	<div id="content-wrapper">
+		<div id="example-wrapper" class="horizontal">
+			<div class="scrollContent">
+				</section>
+				<section class="demo">
+
+
+
+
+
+
+
+					<div class="spacer s0"></div>
+					<section class="demo fullwidth">
+						<div id="parallaxContainer">
+
+							<div class="layer2"></div>
+
+
+
+
+</div>
+
+
+
+<script>
+	// init controller
+	var controller = new ScrollMagic.Controller({vertical: false});
+</script>
+</section>
+<section class="demo">
+<style type="text/css">
+	#reveal1 {
+		opacity: 0;
+		-webkit-transform: scale(0.9);
+			 -moz-transform: scale(0.9);
+				-ms-transform: scale(0.9);
+				 -o-transform: scale(0.9);
+						transform: scale(0.9);
+		-webkit-transition: all 1s ease-in-out;
+			 -moz-transition: all 1s ease-in-out;
+				-ms-transition: all 1s ease-in-out;
+				 -o-transition: all 1s ease-in-out;
+						transition: all 1s ease-in-out;
+	}
+	#reveal1.visible {
+		opacity: 1;
+		-webkit-transform: none;
+			 -moz-transform: none;
+				-ms-transform: none;
+				 -o-transform: none;
+						transform: none;
+	}
+</style>
+<div class="spacer s2"></div>
+<div id="trigger1" class="spacer s0"></div>
+<div id="reveal1" class="box2 blue">
+	<p>I will be revealed when scrolled into view and hidden when scrolled past.</p>
+	<a href="#" class="viewsource">view source</a>
+</div>
+<div class="spacer s2"></div>
+<script>
+		// build scene
+		new ScrollMagic.Scene({
+							triggerElement: "#trigger1",
+							triggerHook: 0.9, // show, when scrolled 10% into view
+							duration: "80%", // hide 10% before exiting view (80% + 10% from bottom)
+							offset: 50 // move trigger to center of element
+						})
+						.setClassToggle("#reveal1", "visible") // add class to reveal
+						.addIndicators() // add indicators (requires plugin)
+						.addTo(controller);
+</script>
+</section>
+<section class="demo">
+<style type="text/css">
+	#reveal2 {
+		opacity: 0;
+		-webkit-transform: rotate(40deg) scale(0.5);
+			 -moz-transform: rotate(40deg) scale(0.5);
+				-ms-transform: rotate(40deg) scale(0.5);
+				 -o-transform: rotate(40deg) scale(0.5);
+						transform: rotate(40deg) scale(0.5);
+		-webkit-transition: all 0.8s ease-in-out;
+			 -moz-transition: all 0.8s ease-in-out;
+				-ms-transition: all 0.8s ease-in-out;
+				 -o-transition: all 0.8s ease-in-out;
+						transition: all 0.8s ease-in-out;
+	}
+	#reveal2.visible {
+		opacity: 1;
+		-webkit-transform: none;
+			 -moz-transform: none;
+				-ms-transform: none;
+				 -o-transform: none;
+						transform: none;
+	}
+</style>
+<div class="spacer s2"></div>
+<div id="trigger2" class="spacer s0"></div>
+<div id="reveal2" class="box1 turqoise">
+	<p>I will stay visible once revealed.<br>(reload to see effect again)</p>
+	<a href="#" class="viewsource">view source</a>
+</div>
+<div class="spacer s2"></div>
+<script>
+		// build scene
+		new ScrollMagic.Scene({
+							triggerElement: "#trigger2",
+							triggerHook: 0.9,
+							offset: 50, // move trigger to center of element
+							reverse: false // only do once
+						})
+						.setClassToggle("#reveal2", "visible") // add class toggle
+						.addIndicators() // add indicators (requires plugin)
+						.addTo(controller);
+</script>
+</section>
+<section class="demo">
+<style type="text/css">
+	.digit {
+		opacity: 0;
+		-webkit-transform: translateX(-40px);
+			 -moz-transform: translateX(-40px);
+				-ms-transform: translateX(-40px);
+				 -o-transform: translateX(-40px);
+						transform: translateX(-40px);
+		-webkit-transition: all 0.6s ease-out;
+			 -moz-transition: all 0.6s ease-out;
+				-ms-transition: all 0.6s ease-out;
+				 -o-transition: all 0.6s ease-out;
+						transition: all 0.6s ease-out;
+	}
+	.digit.visible {
+		opacity: 1;
+		-webkit-transform: none;
+			 -moz-transform: none;
+				-ms-transform: none;
+				 -o-transform: none;
+						transform: none;
+	}
+	.digit:nth-child(2) {
+		margin-top: 50px;
+	}
+	.digit:nth-child(3) {
+		margin-top: 100px;
+	}
+	.digit:nth-child(4) {
+		margin-top: 150px;
+	}
+	.digit:nth-child(5) {
+		margin-top: 200px;
+	}
+</style>
+<div class="spacer s2"></div>
+<div class="spacer s0"></div>
+<div class="box2	 white">
+	<p>Multiple elements can be looped over and animated as they enter the viewport.</p>
+	<a href="#" class="viewsource">view source</a>
+</div>
+<div class="spacer s0"></div>
+<div id="reveal-elements">
+	<div class="box1 digit blue"><p>1</p></div>
+	<div class="box1 digit turqoise"><p>2</p></div>
+	<div class="box1 digit red"><p>3</p></div>
+	<div class="box1 digit green"><p>4</p></div>
+	<div class="box1 digit orange"><p>5</p></div>
+</div>
+<div class="spacer s2"></div>
+<script>
+		// build scenes
+		var revealElements = document.getElementsByClassName("digit");
+		for (var i=0; i<revealElements.length; i++) { // create a scene for each element
+			new ScrollMagic.Scene({
+								triggerElement: revealElements[i], // y value not modified, so we can use element as trigger as well
+								offset: 50,												 // start a little later
+								triggerHook: 0.9,
+							})
+							.setClassToggle(revealElements[i], "visible") // add class toggle
+							.addIndicators({name: "digit " + (i+1) }) // add indicators (requires plugin)
+							.addTo(controller);
+		}
+</script>
+</section>
+<section class="demo">
+<div class="spacer s2"></div>
+<div id="gsap-trigger" class="spacer s0"></div>
+<div id="gsap-anim" class="box1 blue">
+	<p>
+		Use <a href="http://scrollmagic.io/docs/animation.GSAP.html" target="_blank">GSAP</a> if you want to link the animation directly to scroll progress<br>
+		or you just need more control over the timeline.
+	</p>
+	<a href="#" class="viewsource">view source</a>
+</div>
+<div class="spacer s2"></div>
+<script>
+		// build Tween
+		var tween = new TimelineMax()
+			.from("#gsap-anim", 1.5, {rotationY: 180, scale: 0.7, opacity: 0})
+			.to("#gsap-anim", 1.5, {rotationY: 180, scale: 0.7, opacity: 0, delay: 7});
+
+
+		// build scene
+		new ScrollMagic.Scene({
+							triggerElement: "#gsap-trigger",
+							triggerHook: "onEnter", // show, when scrolled 10% into view
+							duration: "100%", // use full viewport
+							offset: 50 // move trigger to center of element
+						})
+						.setTween(tween)
+						.addIndicators({name: "GSAP"}) // add indicators (requires plugin)
+						.addTo(controller);
+</script>
+</section>
+<div class="spacer s_viewport"></div>
+</div>
+</div>
+</div>
+
+
+							<script>$(function () { // wait for document ready
+								// build tween
+								var tween = new TimelineMax ()
+									.add([
+										TweenMax.to("#parallaxContainer .layer2", 1, {backgroundPosition: "-500% 0", ease: Linear.easeNone}),
+									]);
+
+								// build scene
+								var scene = new ScrollMagic.Scene({triggerElement: "#parallaxContainer", duration: 200000, offset: 450})
+												.setTween(tween)
+												.setPin("#parallaxContainer")
+												.addIndicators() // add indicators (requires plugin)
+												.addTo(controller);
+							});</script>
+
+
+					<script>
+
+
+
+
+
+
+
+
+					$(function () { // wait for document ready
+						// build scene
+						var scene = new ScrollMagic.Scene({triggerElement: "#imagesequence"})
+										.setPin("#imagesequence")
+										.addIndicators({name: "2 (duration: 0)"}) // add indicators (requires plugin)
+										.addTo(controller);
+					});
+
+						// define images
+						var images = [
+							"assets/img/walk1.png",
+							"assets/img/walk2.png",
+							"assets/img/walk3.png",
+							"assets/img/walk4.png",
+							//"../../assets/img/example_imagesequence_05.png",
+							//"../../assets/img/example_imagesequence_06.png",
+							//"../../assets/img/example_imagesequence_07.png"
+						];
+
+
+
+
+						// TweenMax can tween any property of any object. We use this object to cycle through the array
+						var obj = {curImg: 0};
+
+						// create tween
+						var tween = TweenMax.to(obj, 0.5,
+							{
+								curImg: images.length - 1,	// animate propery curImg to number of images
+								roundProps: "curImg",				// only integers so it can be used as an array index
+								repeat: 12,									// repeat 3 times
+								immediateRender: true,			// load first image automatically
+								ease: Linear.easeNone,			// show every image the same ammount of time
+								onUpdate: function () {
+								  $("#myimg").attr("src", images[obj.curImg]); // set the image source
+								}
+							}
+						);
+
+						// init controller
+						//var controller = new ScrollMagic.Controller();
+
+
+								var controller = new ScrollMagic.Controller({vertical: false});
+
+
+						// build scene
+						var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 10000})
+										.setTween(tween)
+										.addIndicators() // add indicators (requires plugin)
+										.addTo(controller);
+
+						// handle form change
+						$("form.move input[name=duration]:radio").change(function () {
+							scene.duration($(this).val());
+						});
+
+
+
+					</script>
+
+				</section>
+
+
+				<div class="spacer s_viewport"></div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="assets/js/tracking.js"></script>
+</body>
+</html>
